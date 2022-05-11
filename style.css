@@ -95,10 +95,6 @@ select {
   font-size: large;
   transition: 0.3s;
 }
-.editline {
-  transition: 0.3;
-  background-color: #b9ccd9;
-}
 
 option {
   border-radius: 5px;
@@ -135,22 +131,7 @@ option {
   border-radius: 3px;
   background-color: #a55f81;
   transition: 0.3s;
-  color: #ffff;
-}
-.approv {
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  background-color: #60a55f;
-  transition: 0.3s;
-  color: #ffff;
-}
-.cancel {
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  background-color: #a55f5f;
-  transition: 0.3s;
+
   color: #ffff;
 }
 input {
