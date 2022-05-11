@@ -1,0 +1,125 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Calibri;
+}
+body {
+  background-color: #b0a295;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+header {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background-color: #938e93;
+  align-items: center;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
+}
+#first-line {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 2fr 1fr 2fr repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 90%;
+  background-color: #557a95;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+.line {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 2fr 1fr 2fr repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 90%;
+  background-color: #aec0d7;
+  padding: 10px;
+  font-size: large;
+  text-align: center;
+  border: 1px rgb(127, 127, 127) solid;
+}
+h1 {
+  font-size: 80px;
+  color: #ffff;
+}
+input {
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  width: 20%;
+  padding: 10px;
+  font-size: large;
+}
+select:hover {
+  background-color: #6c8393;
+}
+#ref:hover {
+  background-color: #86546c;
+}
+select {
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  color: white;
+  background-color: #557a95;
+  font-size: large;
+  transition: 0.3s;
+}
+
+option {
+  border-radius: 5px;
+  border: none;
+  background-color: #7395ae;
+  transition: 0.3s;
+}
+#ref {
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  width: 60px;
+  font-size: large;
+  background-color: #7e3c5c;
+  color: white;
+  transition: 0.3s;
+}
+.editBtn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: #d5dde3;
+  transition: 0.3s;
+}
+.deleteBtn:hover {
+  background-color: #a36f89;
+}
+.editBtn:hover {
+  background-color: #dde7ee;
+}
+.deleteBtn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  background-color: #a55f81;
+  transition: 0.3s;
+
+  color: #ffff;
+}
