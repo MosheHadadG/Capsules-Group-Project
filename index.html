@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      media="(max-width: 1000px)"
+      href="styles/mobile.css"
+    />
+  </head>
+  <body>
+    <div id="flip-massege">
+      <h1>סובב את המכשיר לחוויה מירבית</h1>
+      <img src="img/rotate.png" alt="" />
+    </div>
+    <div id="container">
+      <header>
+        <h1>אפי</h1>
+        <input type="text" id="searchBox" placeholder="חפש..." />
+        <select id="selectBox">
+          <option value="everything">הכל</option>
+          <option value="id">מספר</option>
+          <option value="gender">מגדר</option>
+          <option value="firstName">שם פרטי</option>
+          <option value="lastame">שם משפחה</option>
+          <option value="hobby">תחביב</option>
+          <option value="age">גיל</option>
+          <option value="city">עיר</option>
+          <option value="capsule">קפסולה</option>
+        </select>
+        <button id="ref">רענון</button>
+      </header>
+      <main>
+        <div id="first-line">
+          <div class="id">מספר</div>
+          <div class="gender">מגדר</div>
+          <div class="first">שם פרטי</div>
+          <div class="last">שם משפחה</div>
+          <div class="hobby">תחביב</div>
+          <div class="age">גיל</div>
+          <div class="city">עיר</div>
+          <div class="capsule">קפסולה</div>
+          <div class="edit"></div>
+          <div class="delete"></div>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="scripts/index.js"></script>
+  </body>
+</html>
