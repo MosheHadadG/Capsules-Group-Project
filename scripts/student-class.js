@@ -1,8 +1,10 @@
 // import { attributes } from "./constants/students.js";
 
+import { generateSutendetAttributes } from "./constants/students.js";
+
 const students = document.querySelector(".students");
 const main = document.querySelector("main");
-
+generateSutendetAttributes;
 export class Student {
   constructor(id, gender, firstName, lastName, hobby, age, city, capsule) {
     this.id = id;
@@ -13,27 +15,7 @@ export class Student {
     this.age = age;
     this.city = city;
     this.capsule = capsule;
-    this.attributes = {
-      lineAttr: [
-        ["class", "line"],
-        ["id", this.id],
-      ],
-
-      lineIdAttr: [["class", "id"]],
-
-      lineGenderAttr: [
-        ["class", "gender"],
-        ["name", "gender"],
-        ["placeholder", this.gender],
-        ["disabled", ""],
-      ],
-
-      lineFirstAttr: [
-        ["class", "first"],
-        ["placeholder", this.firstName],
-        ["disabled", ""],
-      ],
-    };
+    this.attributes = generateSutendetAttributes.call(this);
   }
 }
 
