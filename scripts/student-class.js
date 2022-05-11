@@ -16,11 +16,6 @@ export class Student {
 }
 
 Student.prototype.renderStudentToHtml = function() {
-  // console.log(this.firstName)
-  // const studentName = document.createElement('h1');
-  // studentName.innerText = this.firstName
-  // students.appendChild(studentName);
-
   //* line
   const line = document.createElement('div');
   line.classList.add('line');
