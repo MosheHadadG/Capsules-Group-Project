@@ -60,14 +60,25 @@ h1 {
   font-size: 80px;
   color: #ffff;
 }
-input {
+#searchBox {
   height: 30px;
   border-radius: 5px;
   border: none;
   width: 20%;
   padding: 10px;
   font-size: large;
+  background-color: white;
+  text-align: right;
 }
+#searchBox::-webkit-input-placeholder {
+  color: #888;
+}
+#searchBox:focus {
+  border: none;
+  outline: none;
+  color: #000;
+}
+
 select:hover {
   background-color: #6c8393;
 }
@@ -122,4 +133,21 @@ option {
   transition: 0.3s;
 
   color: #ffff;
+}
+input {
+  font-size: large;
+  text-align: center;
+  background: none;
+  border: none;
+  width: 100%;
+  color: black;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  color: #86546c;
+}
+::-webkit-input-placeholder {
+  color: #000;
 }
