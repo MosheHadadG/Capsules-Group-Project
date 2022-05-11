@@ -1,0 +1,18 @@
+html {
+  font-size: 13px;
+}
+@media (max-width: 830px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (max-width: 700px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media (max-width: 600px) {
+  #flip-massege {
+    display: flex;
+  }
+}

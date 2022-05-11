@@ -4,6 +4,9 @@
   box-sizing: border-box;
   font-family: Calibri;
 }
+html {
+  font-size: 15px;
+}
 body {
   background-color: #b0a295;
 }
@@ -38,7 +41,7 @@ main {
   padding: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  font-size: 20px;
+  font-size: 1.3rem;
   font-weight: bold;
   color: white;
   text-align: center;
@@ -52,7 +55,7 @@ main {
   width: 90%;
   background-color: #aec0d7;
   padding: 10px;
-  font-size: large;
+  font-size: 1.2rem;
   text-align: center;
   border: 1px rgb(127, 127, 127) solid;
 }
@@ -122,6 +125,7 @@ option {
   border-radius: 3px;
   background-color: #d5dde3;
   transition: 0.3s;
+  font-size: 1rem;
 }
 .deleteBtn:hover {
   background-color: #a36f89;
@@ -136,6 +140,7 @@ option {
   background-color: #a55f81;
   transition: 0.3s;
   color: #ffff;
+  font-size: 1rem;
 }
 .approv {
   border: none;
@@ -144,6 +149,7 @@ option {
   background-color: #60a55f;
   transition: 0.3s;
   color: #ffff;
+  font-size: 1rem;
 }
 .cancel {
   border: none;
@@ -152,9 +158,10 @@ option {
   background-color: #a55f5f;
   transition: 0.3s;
   color: #ffff;
+  font-size: 1rem;
 }
 input {
-  font-size: large;
+  font-size: 1.2rem;
   text-align: center;
   background: none;
   border: none;
@@ -169,4 +176,45 @@ input:focus {
 }
 ::-webkit-input-placeholder {
   color: #000;
+}
+#flip-massege {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+#flip-massege h1 {
+  font-size: 5rem;
+}
+
+#flip-massege img {
+  margin-top: 20%;
+  width: 20%;
+  animation: rotate 3s infinite;
+}
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  25% {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+  75% {
+    opacity: 1;
+    transform: rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
 }

@@ -1,3 +1,5 @@
+// import { attributes } from "./constants/students.js";
+
 const students = document.querySelector(".students");
 const main = document.querySelector("main");
 
@@ -11,8 +13,32 @@ export class Student {
     this.age = age;
     this.city = city;
     this.capsule = capsule;
+    this.attributes = {
+      lineAttr: [
+        ["class", "line"],
+        ["id", this.id],
+      ],
+
+      lineIdAttr: [["class", "id"]],
+
+      lineGenderAttr: [
+        ["class", "gender"],
+        ["name", "gender"],
+        ["placeholder", this.gender],
+        ["disabled", ""],
+      ],
+
+      lineFirstAttr: [
+        ["class", "first"],
+        ["placeholder", this.firstName],
+        ["disabled", ""],
+      ],
+    };
   }
 }
+
+// const { lineAttr, lineFirstAttr, lineGenderAttr, lineIdAttr } = this.attributes;
+// consolelog(lineAttr);
 
 Student.prototype.renderStudentToHtml = function () {
   // console.log(this.firstName)
@@ -20,28 +46,32 @@ Student.prototype.renderStudentToHtml = function () {
   // studentName.innerText = this.firstName
   // students.appendChild(studentName);
 
-  //* line
-  const line = document.createElement("div");
-  line.classList.add("line");
-  line.setAttribute("id", this.id);
+  const createNewCustomElement = (name, attr) => {
+    const el = document.createElement(name);
+    if (attr.length > 1) {
+      attr.forEach((keyValuePer) => {
+        el.setAttribute(keyValuePer[0], keyValuePer[1]);
+      });
+    } else {
+      el.setAttribute(attr[0][0], attr[0][1]);
+    }
 
-  //* line id
-  const lineId = document.createElement("div");
-  lineId.classList.add("id");
-  lineId.innerText = this.id;
+    return el;
+  };
 
-  //* line gender
+  const { lineAttr, lineFirstAttr, lineGenderAttr, lineIdAttr } =
+    this.attributes;
+
+  const line = createNewCustomElement("div", lineAttr);
+  const lineId = createNewCustomElement("div", lineIdAttr);
+
+  const withoutLeading0 = parseInt(this.id, 10);
+  lineId.innerText = withoutLeading0;
+
   this.gender = translateGender(this.gender);
-  const lineGender = document.createElement("input");
-  lineGender.classList.add("gender");
-  lineGender.placeholder = this.gender;
-  lineGender.setAttribute("disabled", "disabled");
+  const lineGender = createNewCustomElement("input", lineGenderAttr);
 
-  //* line first name
-  const lineFirst = document.createElement("input");
-  lineFirst.classList.add("first");
-  lineFirst.placeholder = this.firstName;
-  lineFirst.setAttribute("disabled", "disabled");
+  const lineFirst = createNewCustomElement("input", lineFirstAttr);
 
   //* line Last name
   const linelast = document.createElement(`input`);
@@ -151,16 +181,21 @@ Student.prototype.renderStudentToHtml = function () {
     }
   });
   //! appends to line
-  line.appendChild(lineId);
-  line.appendChild(lineGender);
-  line.appendChild(lineFirst);
-  line.appendChild(linelast);
-  line.appendChild(lineHobby);
-  line.appendChild(lineAge);
-  line.appendChild(lineCity);
-  line.appendChild(lineCapsule);
-  line.appendChild(lineEdit);
-  line.appendChild(lineDelete);
+
+  const lineElements = [
+    lineId,
+    lineGender,
+    lineFirst,
+    linelast,
+    lineHobby,
+    lineAge,
+    lineCity,
+    lineCapsule,
+    lineEdit,
+    lineDelete,
+  ];
+
+  line.append(...lineElements);
 
   //! apeends To students
   main.appendChild(line);
