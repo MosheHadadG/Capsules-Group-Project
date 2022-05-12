@@ -218,3 +218,31 @@ input:focus {
     transform: rotate(-45deg);
   }
 }
+
+[data-temp] {
+  position: relative;
+  cursor: default;
+  
+}
+
+[data-temp]::after {
+  position: absolute;
+  width: 73px;
+  left: calc(50% - 36px);
+  bottom: 25px;
+  text-align: center;
+  box-sizing: border-box;
+  content: attr(data-temp) ;
+  transition: 0.5s;
+  color: black;
+  background-color: #50748d;;
+  border-radius: 4px;
+  visibility: hidden;  
+  opacity: 0; 
+}
+
+[data-temp]:hover::after {
+  transition: 0.5s;
+  visibility: visible;
+  opacity: 1;
+}

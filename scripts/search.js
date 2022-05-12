@@ -94,7 +94,12 @@ function filterIds(array, id) {
 
 function filterValues(array, word) {
   array.forEach((element) => {
-    element.parentElement.style.display = "none";
+    if(!element.classList.contains('city')) {
+      element.parentElement.style.display = "none";
+    }
+    else {
+      element.parentElement.parentElement.style.display = 'none';
+    }
   });
   const filterValues = [...array].filter((element) => {
     const isFound = element.placeholder.indexOf(word) == 0 ? true : false;

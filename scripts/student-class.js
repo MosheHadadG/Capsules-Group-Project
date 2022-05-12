@@ -1,12 +1,11 @@
 // import { attributes } from "./constants/students.js";
 
 import { generateSutendetAttributes } from "./constants/students.js";
-
 const students = document.querySelector(".students");
 const main = document.querySelector("main");
 generateSutendetAttributes;
 export class Student {
-  constructor(id, gender, firstName, lastName, hobby, age, city, capsule) {
+  constructor(id, gender, firstName, lastName, hobby, age, city, capsule, cityTemp) {
     this.id = id;
     this.gender = translateGender(gender);
     this.firstName = firstName;
@@ -15,6 +14,7 @@ export class Student {
     this.age = age;
     this.city = city;
     this.capsule = capsule;
+    this.cityTemp = cityTemp;
     this.attributes = generateSutendetAttributes.call(this);
   }
 }
@@ -37,8 +37,7 @@ Student.prototype.renderStudentToHtml = function () {
 
   const { lineAttr, lineFirstAttr, lineGenderAttr, lineIdAttr, lineLastAtr,
     lineHobbyAtr, lineAgeAtr, lineCityAtr, lineCapsuleAtr, lineEditAtr,
-    lineEditBtnAtr, lineDeleteAtr, lineDeleteBtnAtr } =
-    this.attributes;
+    lineEditBtnAtr, lineDeleteAtr, lineDeleteBtnAtr } = this.attributes;
 
 
   //! Create Elements
@@ -50,12 +49,16 @@ Student.prototype.renderStudentToHtml = function () {
   const lineHobby = createNewCustomElement("input", lineHobbyAtr);
   const lineAge = createNewCustomElement("input", lineAgeAtr);
   const lineCity = createNewCustomElement("input", lineCityAtr);
+  const dataTemp = document.createElement('div');
+  dataTemp.setAttribute('data-temp', `℃${this.cityTemp}`);
+  dataTemp.appendChild(lineCity)
   const lineCapsule = createNewCustomElement("input", lineCapsuleAtr);
   const lineEdit = createNewCustomElement("div", lineCapsuleAtr);
   const lineEditBtn = createNewCustomElement("button", lineEditBtnAtr);
   const lineDelete = createNewCustomElement("div", lineDeleteAtr);
   const lineDeleteBtn = createNewCustomElement("button", lineDeleteBtnAtr);
 
+ 
 
   const withoutLeading0 = parseInt(this.id, 10);
   lineId.innerText = withoutLeading0;
@@ -108,7 +111,6 @@ Student.prototype.renderStudentToHtml = function () {
         break;
 
       case "approving":
-        console.log("asdglhj");
         inputs.forEach((input) => {
           input.value = "";
           input.setAttribute("disabled", "disabled");
@@ -122,8 +124,8 @@ Student.prototype.renderStudentToHtml = function () {
         break;
     }
   });
-  //! appends to line
 
+  //! appends to line
   const lineElements = [
     lineId,
     lineGender,
@@ -131,7 +133,7 @@ Student.prototype.renderStudentToHtml = function () {
     linelast,
     lineHobby,
     lineAge,
-    lineCity,
+    dataTemp,
     lineCapsule,
     lineEdit,
     lineDelete,
