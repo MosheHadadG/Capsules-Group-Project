@@ -8,7 +8,7 @@ generateSutendetAttributes;
 export class Student {
   constructor(id, gender, firstName, lastName, hobby, age, city, capsule) {
     this.id = id;
-    this.gender = gender;
+    this.gender = translateGender(gender);
     this.firstName = firstName;
     this.lastName = lastName;
     this.hobby = hobby;
@@ -19,15 +19,7 @@ export class Student {
   }
 }
 
-// const { lineAttr, lineFirstAttr, lineGenderAttr, lineIdAttr } = this.attributes;
-// consolelog(lineAttr);
-
 Student.prototype.renderStudentToHtml = function () {
-  // console.log(this.firstName)
-  // const studentName = document.createElement('h1');
-  // studentName.innerText = this.firstName
-  // students.appendChild(studentName);
-
   const createNewCustomElement = (name, attr) => {
     const el = document.createElement(name);
     if (attr.length > 1) {
@@ -41,67 +33,42 @@ Student.prototype.renderStudentToHtml = function () {
     return el;
   };
 
-  const { lineAttr, lineFirstAttr, lineGenderAttr, lineIdAttr } =
-    this.attributes;
+  const {
+    lineAttr,
+    lineFirstAttr,
+    lineGenderAttr,
+    lineIdAttr,
+    lineLastAtr,
+    lineHobbyAtr,
+    lineAgeAtr,
+    lineCityAtr,
+    lineCapsuleAtr,
+    lineEditAtr,
+    lineEditBtnAtr,
+    lineDeleteAtr,
+    lineDeleteBtnAtr,
+  } = this.attributes;
 
+  //! Create Elements
   const line = createNewCustomElement("div", lineAttr);
   const lineId = createNewCustomElement("div", lineIdAttr);
+  const lineGender = createNewCustomElement("input", lineGenderAttr);
+  const lineFirst = createNewCustomElement("input", lineFirstAttr);
+  const linelast = createNewCustomElement("input", lineLastAtr);
+  const lineHobby = createNewCustomElement("input", lineHobbyAtr);
+  const lineAge = createNewCustomElement("input", lineAgeAtr);
+  const lineCity = createNewCustomElement("input", lineCityAtr);
+  const lineCapsule = createNewCustomElement("input", lineCapsuleAtr);
+  const lineEdit = createNewCustomElement("div", lineCapsuleAtr);
+  const lineEditBtn = createNewCustomElement("button", lineEditBtnAtr);
+  const lineDelete = createNewCustomElement("div", lineDeleteAtr);
+  const lineDeleteBtn = createNewCustomElement("button", lineDeleteBtnAtr);
 
   const withoutLeading0 = parseInt(this.id, 10);
   lineId.innerText = withoutLeading0;
-
   this.gender = translateGender(this.gender);
-  const lineGender = createNewCustomElement("input", lineGenderAttr);
-
-  const lineFirst = createNewCustomElement("input", lineFirstAttr);
-
-  //* line Last name
-  const linelast = document.createElement(`input`);
-  linelast.classList.add("last");
-  linelast.placeholder = this.lastName;
-  linelast.setAttribute("disabled", "disabled");
-
-  //* line hobby
-  const lineHobby = document.createElement(`input`);
-  lineHobby.classList.add("hobby");
-  lineHobby.placeholder = this.hobby;
-  lineHobby.setAttribute("disabled", "disabled");
-
-  // //* line age
-  const lineAge = document.createElement("input");
-  lineAge.classList.add("age");
-  lineAge.placeholder = this.age;
-  lineAge.setAttribute("disabled", "disabled");
-
-  //* line city
-  const lineCity = document.createElement("input");
-  lineCity.classList.add("city");
-  lineCity.placeholder = this.city;
-  lineCity.setAttribute("disabled", "disabled");
-
-  //* line capsule
-  const lineCapsule = document.createElement("input");
-  lineCapsule.classList.add("capsule");
-  lineCapsule.placeholder = this.capsule;
-  lineCapsule.setAttribute("disabled", "disabled");
-
-  //* line edit
-  const lineEdit = document.createElement("div");
-  lineEdit.classList.add("edit");
-
-  //*  line Button edit
-  const lineEditBtn = document.createElement("button");
-  lineEditBtn.classList.add("editBtn");
   lineEditBtn.innerText = "עריכה";
   lineEdit.appendChild(lineEditBtn);
-
-  //*line Delete
-  const lineDelete = document.createElement("div");
-  lineDelete.classList.add("delete");
-
-  //* line button Delete
-  const lineDeleteBtn = document.createElement("button");
-  lineDeleteBtn.classList.add("deleteBtn");
   lineDeleteBtn.innerText = "מחיקה";
   lineDelete.appendChild(lineDeleteBtn);
 
