@@ -19,9 +19,7 @@ export class Student {
   }
 }
 
-
 Student.prototype.renderStudentToHtml = function () {
-
   const createNewCustomElement = (name, attr) => {
     const el = document.createElement(name);
     if (attr.length > 1) {
@@ -35,11 +33,21 @@ Student.prototype.renderStudentToHtml = function () {
     return el;
   };
 
-  const { lineAttr, lineFirstAttr, lineGenderAttr, lineIdAttr, lineLastAtr,
-    lineHobbyAtr, lineAgeAtr, lineCityAtr, lineCapsuleAtr, lineEditAtr,
-    lineEditBtnAtr, lineDeleteAtr, lineDeleteBtnAtr } =
-    this.attributes;
-
+  const {
+    lineAttr,
+    lineFirstAttr,
+    lineGenderAttr,
+    lineIdAttr,
+    lineLastAtr,
+    lineHobbyAtr,
+    lineAgeAtr,
+    lineCityAtr,
+    lineCapsuleAtr,
+    lineEditAtr,
+    lineEditBtnAtr,
+    lineDeleteAtr,
+    lineDeleteBtnAtr,
+  } = this.attributes;
 
   //! Create Elements
   const line = createNewCustomElement("div", lineAttr);
@@ -55,7 +63,6 @@ Student.prototype.renderStudentToHtml = function () {
   const lineEditBtn = createNewCustomElement("button", lineEditBtnAtr);
   const lineDelete = createNewCustomElement("div", lineDeleteAtr);
   const lineDeleteBtn = createNewCustomElement("button", lineDeleteBtnAtr);
-
 
   const withoutLeading0 = parseInt(this.id, 10);
   lineId.innerText = withoutLeading0;
@@ -145,7 +152,3 @@ Student.prototype.renderStudentToHtml = function () {
 
 //* change word gender from engilsh to hebrew
 const translateGender = (gender) => (gender === "male" ? "זכר" : "נקבה");
-  
-
-
-

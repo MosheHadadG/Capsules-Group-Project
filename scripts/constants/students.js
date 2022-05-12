@@ -23,51 +23,40 @@ export function generateSutendetAttributes() {
     lineLastAtr: [
       ["class", "last"],
       ["placeholder", this.lastName],
-      ["disabled", ""]
+      ["disabled", ""],
     ],
 
     lineHobbyAtr: [
       ["class", "hobby"],
       ["placeholder", this.hobby],
-      ["disabled", ""]
+      ["disabled", ""],
     ],
 
     lineAgeAtr: [
       ["class", "age"],
       ["placeholder", this.age],
-      ["disabled", ""]
+      ["disabled", ""],
     ],
 
     lineCityAtr: [
       ["class", "city"],
       ["placeholder", this.city],
-      ["disabled", ""]
+      ["disabled", ""],
     ],
 
     lineCapsuleAtr: [
       ["class", "capsule"],
       ["placeholder", this.capsule],
-      ["disabled", ""]
+      ["disabled", ""],
     ],
 
-    lineEditAtr: [
-      ["class", "edit"]
-    ],
+    lineEditAtr: [["class", "edit"]],
 
-    lineEditBtnAtr: [
-      ["class", "editBtn"]
-    ],
+    lineEditBtnAtr: [["class", "editBtn"]],
 
-    lineDeleteAtr: [
-      ["class", "delete"]
-    ],
+    lineDeleteAtr: [["class", "delete"]],
 
-    lineDeleteBtnAtr: [
-      ["class", "deleteBtn"]
-    ],
-
-
-
+    lineDeleteBtnAtr: [["class", "deleteBtn"]],
   };
   return attributes;
 }
